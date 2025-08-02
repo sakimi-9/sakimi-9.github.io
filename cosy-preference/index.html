@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    偏好配置页面待开发...
+    全局偏好配置
   </title>
   <meta name="description" content="sakimi&#39;s blog">
   <meta name="keywords" content="sakimi&#39;s blog">
@@ -152,7 +152,7 @@
       </g>
     </svg>
     <span class="ellipsis">
-      偏好配置页面待开发...
+      全局偏好配置
     </span>
     
   </section>
@@ -164,6 +164,22 @@
     </div>
     <div class="right">
       
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>显示 / 隐藏 文章目录</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
     </div>
   </header>
   <div class="content">
@@ -172,12 +188,459 @@
         <!-- 渲染文章内容 -->
         <article>
           <!-- 文章标题 -->
-          <h1 class="post-title">偏好配置页面待开发...</h1>
+          <h1 class="post-title">全局偏好配置</h1>
           <div class="last-updated">
-            上次更新: 2025-07-31 19:36:59
+            上次更新: 2025-08-02 12:13:17
           </div>
           <!-- 文章 -->
-          
+          <style>
+.preference {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.preference > main {
+  padding: 48px 24px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.preference h1 {
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--color-font-2, #e0e0e0);
+  margin-bottom: 8px;
+}
+
+.preference h2 {
+  margin: 0;
+  padding: 2rem 0 1rem 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-font-2, #e0e0e0);
+}
+
+.preference p {
+  display: flex;
+  align-items: center;
+  color: var(--color-font-2, #a0a0a0);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.preference > main > section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border, #333);
+}
+
+.preference > main > section > div:last-child {
+  min-width: 120px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.preference > main > section:last-child {
+  border-bottom: none;
+}
+
+.preference > main > section > div {
+  flex: 1;
+}
+
+.preference > main > section > div h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-font, #e0e0e0);
+  margin: 0 0 4px 0;
+}
+
+.preference > main > section > div p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+/* 按钮样式 */
+.cosy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--color-bg-2, #2a2a2a);
+  border: 1px solid var(--color-border, #444);
+  border-radius: 6px;
+  color: var(--color-font, #e0e0e0);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.cosy-button:hover {
+  background: var(--color-bg-3, #333);
+  border-color: var(--color-border-hover, #555);
+}
+
+.cosy-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 标签样式 */
+.cosy-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cosy-label[color="green"] {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  color: #22c55e;
+}
+
+.cosy-label[color="red"] {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+.cosy-label[bordered] {
+  border: 1px solid var(--color-border, #444);
+  background: var(--color-bg-2, #2a2a2a);
+  color: var(--color-font, #e0e0e0);
+}
+
+
+/* 主题色显示 */
+#theme-color {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-base, 4px);
+  display: inline-block;
+  border: 1px solid var(--color-border, #444);
+}
+
+/* 下拉菜单样式 */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  min-width: 40px;
+  text-align: right;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-bg-2, #2a2a2a);
+  border: 1px solid var(--color-border, #444);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 40px;
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--color-font, #e0e0e0);
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: var(--color-bg-3, #333);
+}
+
+.dropdown-item:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.dropdown-item:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+/* 工具提示 */
+.cosy-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.cosy-tooltip .tooltip-content {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-2, #2a2a2a);
+  border: 1px solid var(--color-border, #444);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--color-font, #e0e0e0);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.cosy-tooltip:hover .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 图标样式 */
+.cosy-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-font, #e0e0e0);
+  text-decoration: none;
+}
+
+.cosy-icon[blank] {
+  background: none;
+  border: none;
+}
+
+.cosy-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .preference > main > section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .preference > main > section > div {
+    width: 100%;
+  }
+  
+  .preference > main > section > div:last-child {
+    justify-content: flex-start;
+  }
+}
+</style>
+
+<div class="preference cosy-scrollbar">
+  <main>
+    <h2>外观</h2>
+    <section>
+      <div>
+        <h3>字体大小</h3>
+        <p>全局字体大小</p>
+      </div>
+      <div class="dropdown-container">
+        <cosy-button id="dd-button-font-size" onclick="toggleDropdown('font-size')">
+          <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+            <g fill="none">
+              <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
+            </g>
+          </svg>
+          <span slot="content" id="font-size-display">14px</span>
+        </cosy-button>
+        <div class="dropdown-menu" id="font-size-dropdown">
+          <div class="dropdown-item" data-value="13px">13px</div>
+          <div class="dropdown-item" data-value="14px">14px</div>
+          <div class="dropdown-item" data-value="15px">15px</div>
+          <div class="dropdown-item" data-value="16px">16px</div>
+          <div class="dropdown-item" data-value="17px">17px</div>
+          <div class="dropdown-item" data-value="18px">18px</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h3>语言</h3>
+        <p>全局界面显示语言</p>
+      </div>
+      <cosy-label size="large" color="green" bordered>
+        <span>简体中文</span>
+      </cosy-label>
+    </section>
+    <cosy-divider></cosy-divider>
+    <h2>主题</h2>
+    <section>
+      <div>
+        <h3>主题样式</h3>
+        <p>选择网站主题的样式</p>
+      </div>
+      <div class="dropdown-container">
+        <cosy-button id="dd-button-theme" onclick="toggleDropdown('theme')">
+          <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+            <g fill="none">
+              <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
+            </g>
+          </svg>
+          <span slot="content" id="theme-display">Dark</span>
+        </cosy-button>
+        <div class="dropdown-menu" id="theme-dropdown">
+          <div class="dropdown-item" data-value="dark">Dark</div>
+          <div class="dropdown-item" data-value="light">Light</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h3>主题色</h3>
+        <p>
+          <cosy-label color="red">_config.cosy.yml → color</cosy-label> 参数用于控制全局主题颜色
+        </p>
+      </div>
+      <cosy-tooltip placement="left" id="theme-color-tip">
+        <cosy-label bordered>
+                <span class="tooltip-content" id="theme-color-tooltip"></span>
+          <span id="theme-color"></span>
+        </cosy-label>
+      </cosy-tooltip>
+    </section>
+    <cosy-divider></cosy-divider>
+    
+  </main>
+</div>
+
+<script>
+// 常量定义
+const APPEARANCE = {
+  FONT_SIZE: 'cosy-font-size',
+  THEME: 'cosy-theme'
+};
+
+const APPEARANCE_DEFAULT = {
+  FONT_SIZE: '14px',
+  THEME: 'dark'
+};
+
+// 字体大小选项
+const fontSizeOptions = [
+  { value: "13px", label: "13px" },
+  { value: "14px", label: "14px" },
+  { value: "15px", label: "15px" },
+  { value: "16px", label: "16px" },
+  { value: "17px", label: "17px" },
+  { value: "18px", label: "18px" }
+];
+
+// 主题选项
+const themeOptions = [
+  { value: "dark", label: "Dark" },
+  { value: "light", label: "Light" }
+];
+
+// 获取标签文本
+function getLabel(options, value) {
+  const item = options.find(i => i.value === value);
+  return String(item?.label ?? "oops");
+}
+
+// 获取主题色
+function getThemeColor() {
+  const themeColor = (window.theme && window.theme.color) || 'hsl(238, 50%, 56%)';
+  return {
+    hsl: themeColor,
+    hex: themeColor // 这里可以添加HSL转HEX的逻辑
+  };
+}
+
+// 设置根变量
+function setRootVar(name, value) {
+  document.documentElement.style.setProperty(name, value);
+}
+
+// 切换下拉菜单
+function toggleDropdown(type) {
+  const dropdown = document.getElementById(`${type}-dropdown`);
+  const allDropdowns = document.querySelectorAll('.dropdown-menu');
+  
+  // 关闭其他下拉菜单
+  allDropdowns.forEach(d => {
+    if (d !== dropdown) {
+      d.classList.remove('show');
+    }
+  });
+  
+  // 切换当前下拉菜单
+  dropdown.classList.toggle('show');
+}
+
+// 点击外部关闭下拉菜单
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.dropdown-container')) {
+    document.querySelectorAll('.dropdown-menu').forEach(dropdown => {
+      dropdown.classList.remove('show');
+    });
+  }
+});
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始化字体大小
+  const fontSizeDisplay = document.getElementById('font-size-display');
+  const currentFontSize = localStorage.getItem(APPEARANCE.FONT_SIZE) ?? APPEARANCE_DEFAULT.FONT_SIZE;
+  fontSizeDisplay.textContent = currentFontSize;
+  setRootVar('--font-size', currentFontSize);
+  
+  // 初始化主题
+  const themeDisplay = document.getElementById('theme-display');
+  const currentTheme = localStorage.getItem(APPEARANCE.THEME) ?? APPEARANCE_DEFAULT.THEME;
+  themeDisplay.textContent = getLabel(themeOptions, currentTheme);
+  document.documentElement.className = "";
+  document.documentElement.classList.add(`cosy-theme-${currentTheme}`);
+  
+  // 初始化主题色
+  const themeColorSpan = document.getElementById('theme-color');
+  const themeColorTooltip = document.getElementById('theme-color-tooltip');
+  const { hsl, hex } = getThemeColor();
+  themeColorSpan.style.background = hsl;
+  themeColorTooltip.textContent = hex;
+  
+  // 绑定字体大小下拉菜单事件
+  document.getElementById('font-size-dropdown').addEventListener('click', function(event) {
+    if (event.target.classList.contains('dropdown-item')) {
+      const value = event.target.dataset.value;
+      const label = event.target.textContent;
+      
+      fontSizeDisplay.textContent = label;
+      localStorage.setItem(APPEARANCE.FONT_SIZE, value);
+      setRootVar('--font-size', value);
+      
+      this.classList.remove('show');
+    }
+  });
+  
+  // 绑定主题下拉菜单事件
+  document.getElementById('theme-dropdown').addEventListener('click', function(event) {
+    if (event.target.classList.contains('dropdown-item')) {
+      const value = event.target.dataset.value;
+      const label = event.target.textContent;
+      
+      themeDisplay.textContent = label;
+      localStorage.setItem(APPEARANCE.THEME, value);
+      document.documentElement.className = "";
+      document.documentElement.classList.add(`cosy-theme-${value}`);
+      
+      this.classList.remove('show');
+    }
+  });
+});
+</script>
             <div class="post-tags">
               <!-- 文章tags -->
               
@@ -191,6 +654,31 @@
     </main>
     <!-- toc -->
     
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>目录</span>
+              </p>
+              <span slot="content">
+                <span>隐藏目录</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">外观</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">主题样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">主题色</span></a></li></ol></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
   </div>
 
 </div>
