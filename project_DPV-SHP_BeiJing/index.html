@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/project_DPV-SHP_BeiJing/二手房数据 (1).svg" />
+    <link rel="shortcut icon" type="image/svg+xml" href="/project_DPV-SHP_BeiJing/二手房数据 (1).svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>链家北京二手房爬虫、数据处理及可视化</title>
+
+    <!-- 项目资源文件 - 请根据构建文件里的修改 js、css的路径-->
+    <script type="module" crossorigin src="/project_DPV-SHP_BeiJing/assets/index-Dz1_NyxO.js"></script>
+    <link rel="stylesheet" crossorigin href="/project_DPV-SHP_BeiJing/assets/index-BDSkwAbu.css">
+
+    <!-- 修复资源路径的脚本 -->
+    <script>
+        // 重写fetch函数来修复JSON文件路径
+        const originalFetch = window.fetch;
+        window.fetch = function (url, options) {
+            // 如果是JSON文件且路径以/开头，添加项目路径前缀
+            if (typeof url === 'string' && url.endsWith('.json') && url.startsWith('/')) {
+                url = '/project_DPV-SHP_BeiJing' + url;//注意这里也要修改项目目录
+            }
+            return originalFetch.call(this, url, options);
+        };
+    </script>
+
+    <!-- CSS隔离样式，防止被Hexo主题覆盖 -->
+    <style>
+        /* 重置所有继承的样式 */
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+            background: #ffffff !important;
+            color: #333333 !important;
+        }
+
+        /* 确保应用容器不受影响 */
+        #app,
+        #root,
+        .app,
+        .root {
+            max-width: 1280px !important;
+            margin: 0 auto !important;
+            padding: 2rem !important;
+            text-align: left !important;
+        }
+
+        /* 重置所有可能的主题样式 */
+        * {
+            box-sizing: border-box !important;
+        }
+
+        /* 确保图表容器不受影响 */
+        .echarts-container,
+        .chart-container,
+        .canvas-container {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+
+            #app,
+            #root,
+            .app,
+            .root {
+                padding: 1rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 应用容器 - 请根据你的项目修改 -->
+    <div id="app"></div>
+
+    <!-- 备用容器，适用于不同框架 -->
+    <!-- <div id="root"></div> -->
+    <!-- <div class="app"></div> -->
+</body>
+
+</html>
