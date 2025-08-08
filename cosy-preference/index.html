@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    全局偏好配置
+    全局偏好配置显示
   </title>
   <meta name="description" content="sakimi&#39;s blog">
   <meta name="keywords" content="sakimi&#39;s blog">
@@ -152,7 +152,7 @@
       </g>
     </svg>
     <span class="ellipsis">
-      全局偏好配置
+      全局偏好配置显示
     </span>
     
   </section>
@@ -188,9 +188,9 @@
         <!-- 渲染文章内容 -->
         <article>
           <!-- 文章标题 -->
-          <h1 class="post-title">全局偏好配置</h1>
+          <h1 class="post-title">全局偏好配置显示</h1>
           <div class="last-updated">
-            上次更新: 2025-08-02 12:13:17
+            上次更新: 2025-08-08 21:02:35
           </div>
           <!-- 文章 -->
           <style>
@@ -441,78 +441,47 @@
 
 <div class="preference cosy-scrollbar">
   <main>
-    <h2>外观</h2>
-    <section>
+    <h2 style="margin-top:0;margin-bottom:32px;font-size:22px;font-weight:500;color:var(--color-font-2,#e0e0e0);">外观</h2>
+    <section style="display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--color-border,#333);">
       <div>
-        <h3>字体大小</h3>
-        <p>全局字体大小</p>
+        <h3 style="font-size:16px;font-weight:400;color:var(--color-font,#e0e0e0);margin:0 0 4px 0;">字体大小</h3>
+        <p style="color:var(--color-font-2,#a0a0a0);margin:0;">全局字体大小</p>
       </div>
-      <div class="dropdown-container">
-        <cosy-button id="dd-button-font-size" onclick="toggleDropdown('font-size')">
-          <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
-            <g fill="none">
-              <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
-            </g>
-          </svg>
-          <span slot="content" id="font-size-display">14px</span>
-        </cosy-button>
-        <div class="dropdown-menu" id="font-size-dropdown">
-          <div class="dropdown-item" data-value="13px">13px</div>
-          <div class="dropdown-item" data-value="14px">14px</div>
-          <div class="dropdown-item" data-value="15px">15px</div>
-          <div class="dropdown-item" data-value="16px">16px</div>
-          <div class="dropdown-item" data-value="17px">17px</div>
-          <div class="dropdown-item" data-value="18px">18px</div>
-        </div>
+      <div>
+        <span id="font-size-display" style="font-size:15px;padding:6px 16px;border-radius:6px;background:var(--color-bg-2,#2a2a2a);border:1px solid var(--color-border,#444);color:var(--color-font,#e0e0e0);">14像素</span>
       </div>
     </section>
-    <section>
+    <section style="display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--color-border,#333);">
       <div>
-        <h3>语言</h3>
-        <p>全局界面显示语言</p>
+        <h3 style="font-size:16px;font-weight:400;color:var(--color-font,#e0e0e0);margin:0 0 4px 0;">语言</h3>
+        <p style="color:var(--color-font-2,#a0a0a0);margin:0;">全局界面显示语言</p>
       </div>
-      <cosy-label size="large" color="green" bordered>
-        <span>简体中文</span>
-      </cosy-label>
-    </section>
-    <cosy-divider></cosy-divider>
-    <h2>主题</h2>
-    <section>
       <div>
-        <h3>主题样式</h3>
-        <p>选择网站主题的样式</p>
-      </div>
-      <div class="dropdown-container">
-        <cosy-button id="dd-button-theme" onclick="toggleDropdown('theme')">
-          <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
-            <g fill="none">
-              <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
-            </g>
-          </svg>
-          <span slot="content" id="theme-display">Dark</span>
-        </cosy-button>
-        <div class="dropdown-menu" id="theme-dropdown">
-          <div class="dropdown-item" data-value="dark">Dark</div>
-          <div class="dropdown-item" data-value="light">Light</div>
-        </div>
+        <span style="font-size:15px;padding:6px 16px;border-radius:6px;background:rgba(34,197,94,0.1);border:1px solid #22c55e;color:#22c55e;display:inline-block;">简体中文</span>
       </div>
     </section>
-    <section>
+    <div style="height:1px;background:var(--color-border,#333);margin:32px 0 0 0;"></div>
+    <h2 style="margin-top:32px;margin-bottom:32px;font-size:22px;font-weight:500;color:var(--color-font-2,#e0e0e0);">主题</h2>
+    <section style="display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--color-border,#333);">
       <div>
-        <h3>主题色</h3>
-        <p>
-          <cosy-label color="red">_config.cosy.yml → color</cosy-label> 参数用于控制全局主题颜色
+        <h3 style="font-size:16px;font-weight:400;color:var(--color-font,#e0e0e0);margin:0 0 4px 0;">主题模式</h3>
+        <p style="color:var(--color-font-2,#a0a0a0);margin:0;">选择网站主题模式</p>
+      </div>
+      <div>
+        <span id="theme-display" style="font-size:15px;padding:6px 16px;border-radius:6px;background:var(--color-bg-2,#2a2a2a);border:1px solid var(--color-border,#444);color:var(--color-font,#e0e0e0);">dark</span>
+      </div>
+    </section>
+    <section style="display:flex;align-items:center;justify-content:space-between;padding:24px 0;">
+      <div>
+        <h3 style="font-size:16px;font-weight:400;color:var(--color-font,#e0e0e0);margin:0 0 4px 0;">主题色</h3>
+        <p style="color:var(--color-font-2,#a0a0a0);margin:0;">
+          <span style="font-size:13px;padding:2px 8px;border-radius:4px;background:rgba(239,68,68,0.1);border:1px solid #ef4444;color:#ef4444;display:inline-block;">_config.cosy.yml > color</span> 用于控制全局主题颜色
         </p>
       </div>
-      <cosy-tooltip placement="left" id="theme-color-tip">
-        <cosy-label bordered>
-                <span class="tooltip-content" id="theme-color-tooltip"></span>
-          <span id="theme-color"></span>
-        </cosy-label>
-      </cosy-tooltip>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span id="theme-color" style="background:hsl(238,50%,56%);display:inline-block;width:24px;height:24px;border-radius:6px;"></span>
+      </div>
     </section>
-    <cosy-divider></cosy-divider>
-    
   </main>
 </div>
 
@@ -544,103 +513,7 @@ const themeOptions = [
   { value: "light", label: "Light" }
 ];
 
-// 获取标签文本
-function getLabel(options, value) {
-  const item = options.find(i => i.value === value);
-  return String(item?.label ?? "oops");
-}
 
-// 获取主题色
-function getThemeColor() {
-  const themeColor = (window.theme && window.theme.color) || 'hsl(238, 50%, 56%)';
-  return {
-    hsl: themeColor,
-    hex: themeColor // 这里可以添加HSL转HEX的逻辑
-  };
-}
-
-// 设置根变量
-function setRootVar(name, value) {
-  document.documentElement.style.setProperty(name, value);
-}
-
-// 切换下拉菜单
-function toggleDropdown(type) {
-  const dropdown = document.getElementById(`${type}-dropdown`);
-  const allDropdowns = document.querySelectorAll('.dropdown-menu');
-  
-  // 关闭其他下拉菜单
-  allDropdowns.forEach(d => {
-    if (d !== dropdown) {
-      d.classList.remove('show');
-    }
-  });
-  
-  // 切换当前下拉菜单
-  dropdown.classList.toggle('show');
-}
-
-// 点击外部关闭下拉菜单
-document.addEventListener('click', function(event) {
-  if (!event.target.closest('.dropdown-container')) {
-    document.querySelectorAll('.dropdown-menu').forEach(dropdown => {
-      dropdown.classList.remove('show');
-    });
-  }
-});
-
-// 页面加载时初始化
-document.addEventListener('DOMContentLoaded', function() {
-  // 初始化字体大小
-  const fontSizeDisplay = document.getElementById('font-size-display');
-  const currentFontSize = localStorage.getItem(APPEARANCE.FONT_SIZE) ?? APPEARANCE_DEFAULT.FONT_SIZE;
-  fontSizeDisplay.textContent = currentFontSize;
-  setRootVar('--font-size', currentFontSize);
-  
-  // 初始化主题
-  const themeDisplay = document.getElementById('theme-display');
-  const currentTheme = localStorage.getItem(APPEARANCE.THEME) ?? APPEARANCE_DEFAULT.THEME;
-  themeDisplay.textContent = getLabel(themeOptions, currentTheme);
-  document.documentElement.className = "";
-  document.documentElement.classList.add(`cosy-theme-${currentTheme}`);
-  
-  // 初始化主题色
-  const themeColorSpan = document.getElementById('theme-color');
-  const themeColorTooltip = document.getElementById('theme-color-tooltip');
-  const { hsl, hex } = getThemeColor();
-  themeColorSpan.style.background = hsl;
-  themeColorTooltip.textContent = hex;
-  
-  // 绑定字体大小下拉菜单事件
-  document.getElementById('font-size-dropdown').addEventListener('click', function(event) {
-    if (event.target.classList.contains('dropdown-item')) {
-      const value = event.target.dataset.value;
-      const label = event.target.textContent;
-      
-      fontSizeDisplay.textContent = label;
-      localStorage.setItem(APPEARANCE.FONT_SIZE, value);
-      setRootVar('--font-size', value);
-      
-      this.classList.remove('show');
-    }
-  });
-  
-  // 绑定主题下拉菜单事件
-  document.getElementById('theme-dropdown').addEventListener('click', function(event) {
-    if (event.target.classList.contains('dropdown-item')) {
-      const value = event.target.dataset.value;
-      const label = event.target.textContent;
-      
-      themeDisplay.textContent = label;
-      localStorage.setItem(APPEARANCE.THEME, value);
-      document.documentElement.className = "";
-      document.documentElement.classList.add(`cosy-theme-${value}`);
-      
-      this.classList.remove('show');
-    }
-  });
-});
-</script>
             <div class="post-tags">
               <!-- 文章tags -->
               
@@ -674,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </span>
             </cosy-tooltip>
             <!-- 文章toc -->
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">外观</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">主题样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">主题色</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">外观</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">主题模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">主题色</span></a></li></ol></li></ol>
           </div>
         </div>
       </cosy-drag-box>

@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+  <script>
+    (function () {
+      try {
+        var fs = localStorage.getItem('cosy-font-size') || '14px';
+        var th = localStorage.getItem('cosy-theme') || 'dark';
+        var doc = document.documentElement;
+        if (doc && doc.style) doc.style.setProperty('--font-size', fs);
+        if (doc && doc.classList) {
+          doc.classList.remove('cosy-theme-dark', 'cosy-theme-light');
+          doc.classList.add('cosy-theme-' + th);
+        }
+      } catch (e) { }
+    })();
+  </script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/prject_DPV-EC/可视化.svg" />
   <link rel="shortcut icon" type="image/svg+xml" href="/prject_DPV-EC/可视化.svg" />
