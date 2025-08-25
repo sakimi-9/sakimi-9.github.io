@@ -190,7 +190,7 @@
           <!-- 文章标题 -->
           <h1 class="post-title">技术栈学习路线</h1>
           <div class="last-updated">
-            上次更新: 2025-08-09 12:07:00
+            上次更新: 2025-08-26 07:36:49
           </div>
           <!-- 文章 -->
           <div class="roadmap-container">
@@ -252,6 +252,24 @@
           <h3>Tailwind CSS</h3>
           <p>实用优先的CSS框架</p>
         </div>
+        
+  <div class="tech-card completed">
+    <div class="tech-icon">📱</div>
+    <h3>UniApp</h3>
+    <p>跨平台多端应用开发</p>
+  </div>
+        
+  <div class="tech-card completed">
+    <div class="tech-icon">🐳</div>
+    <h3>Docker</h3>
+    <p>容器化部署与环境隔离</p>
+  </div>
+        
+  <div class="tech-card completed">
+    <div class="tech-icon">🧩</div>
+    <h3>UnoCSS</h3>
+    <p>即时按需原子化 CSS 引擎</p>
+  </div>
   </div>
 
   </div>
@@ -259,17 +277,10 @@
   <div class="roadmap-section">
       <h2 class="section-title planned">📋 计划学习</h2>
       <div class="tech-grid">
-
   <div class="tech-card planned">
-          <div class="tech-icon">🐳</div>
-          <h3>Docker</h3>
-          <p>容器化部署与虚拟化技术</p>
-  </div>  
-
-  <div class="tech-card planned">
-          <div class="tech-icon">📱</div>
-          <h3>UniApp</h3>
-          <p>移动应用开发</p>
+    <div class="tech-icon">🧠</div>
+    <h3>LangChain LangGraph</h3>
+    <p>大语言模型应用编排与智能体工作流</p>
   </div>
         
   <div class="tech-card planned">
@@ -375,6 +386,30 @@
             </div>
   </div>
 
+  <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <h3>UniApp</h3>
+              <p>跨平台多端应用开发</p>
+            </div>
+  </div>
+
+  <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <h3>Docker</h3>
+              <p>容器化部署与环境隔离</p>
+            </div>
+  </div>
+
+  <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <h3>UnoCSS</h3>
+              <p>即时按需原子化 CSS 引擎</p>
+            </div>
+  </div>
+
   <div class="timeline-section planned">
         <h2 class="timeline-title">📋 计划学习技术栈</h2>
         <div class="timeline-items">
@@ -382,16 +417,8 @@
   <div class="timeline-item">
             <div class="timeline-marker planned"></div>
             <div class="timeline-content">
-              <h3>Docker</h3>
-              <p>容器化部署与虚拟化技术</p>
-            </div>
-  </div>
-          
-  <div class="timeline-item">
-            <div class="timeline-marker planned"></div>
-            <div class="timeline-content">
-              <h3>UniApp</h3>
-              <p>跨平台移动应用开发</p>
+              <h3>LangChain LangGraph</h3>
+              <p>LLM 应用编排与智能体工作流</p>
             </div>
   </div>
           
@@ -731,6 +758,10 @@
 .tech-card:nth-child(5) { animation-delay: 0.5s; }
 .tech-card:nth-child(6) { animation-delay: 0.6s; }
 .tech-card:nth-child(7) { animation-delay: 0.7s; }
+.tech-card:nth-child(8) { animation-delay: 0.8s; }
+.tech-card:nth-child(9) { animation-delay: 0.9s; }
+.tech-card:nth-child(10) { animation-delay: 1.0s; }
+.tech-card:nth-child(11) { animation-delay: 1.1s; }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
@@ -826,7 +857,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </span>
             </cosy-tooltip>
             <!-- 文章toc -->
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cards-view"><span class="toc-number">1.</span> <span class="toc-text">✅ 已学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.1.</span> <span class="toc-text">HTML5 CSS3 JavaScript ES6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.2.</span> <span class="toc-text">Vue3 Element UI Plus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.3.</span> <span class="toc-text">Node.js Express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.4.</span> <span class="toc-text">包管理与构建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.5.</span> <span class="toc-text">MySQL MongoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.6.</span> <span class="toc-text">Promise AJAX Axios Fetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.7.</span> <span class="toc-text">TypeScript NestJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.8.</span> <span class="toc-text">Tailwind CSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cards-view"><span class="toc-number">2.</span> <span class="toc-text">📋 计划学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.1.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.2.</span> <span class="toc-text">UniApp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.3.</span> <span class="toc-text">React Next.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.4.</span> <span class="toc-text">React Native</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.5.</span> <span class="toc-text">Flask Django</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.6.</span> <span class="toc-text">Electron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.7.</span> <span class="toc-text">Flutter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.</span> <span class="toc-text">✅ 已学习技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.1.</span> <span class="toc-text">HTML5 CSS3 JavaScript ES6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.2.</span> <span class="toc-text">Vue3 Element UI Plus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.3.</span> <span class="toc-text">Node.js Express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.4.</span> <span class="toc-text">包管理与构建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.5.</span> <span class="toc-text">MySQL MongoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.6.</span> <span class="toc-text">Promise AJAX Axios Fetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.7.</span> <span class="toc-text">TypeScript NestJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.8.</span> <span class="toc-text">Tailwind CSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.</span> <span class="toc-text">📋 计划学习技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.1.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.2.</span> <span class="toc-text">UniApp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.3.</span> <span class="toc-text">React Next.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.4.</span> <span class="toc-text">React Native</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.5.</span> <span class="toc-text">Flask Django</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.6.</span> <span class="toc-text">Electron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.7.</span> <span class="toc-text">Flutter</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cards-view"><span class="toc-number">1.</span> <span class="toc-text">✅ 已学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.1.</span> <span class="toc-text">HTML5 CSS3 JavaScript ES6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.2.</span> <span class="toc-text">Vue3 Element UI Plus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.3.</span> <span class="toc-text">Node.js Express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.4.</span> <span class="toc-text">包管理与构建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.5.</span> <span class="toc-text">MySQL MongoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.6.</span> <span class="toc-text">Promise AJAX Axios Fetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.7.</span> <span class="toc-text">TypeScript NestJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.8.</span> <span class="toc-text">Tailwind CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.9.</span> <span class="toc-text">UniApp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.10.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">1.11.</span> <span class="toc-text">UnoCSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cards-view"><span class="toc-number">2.</span> <span class="toc-text">📋 计划学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.1.</span> <span class="toc-text">LangChain LangGraph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.2.</span> <span class="toc-text">React Next.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.3.</span> <span class="toc-text">React Native</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.4.</span> <span class="toc-text">Flask Django</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.5.</span> <span class="toc-text">Electron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cards-view"><span class="toc-number">2.6.</span> <span class="toc-text">Flutter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.</span> <span class="toc-text">✅ 已学习技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.1.</span> <span class="toc-text">HTML5 CSS3 JavaScript ES6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.2.</span> <span class="toc-text">Vue3 Element UI Plus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.3.</span> <span class="toc-text">Node.js Express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.4.</span> <span class="toc-text">包管理与构建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.5.</span> <span class="toc-text">MySQL MongoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.6.</span> <span class="toc-text">Promise AJAX Axios Fetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.7.</span> <span class="toc-text">TypeScript NestJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.8.</span> <span class="toc-text">Tailwind CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.9.</span> <span class="toc-text">UniApp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.10.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">3.11.</span> <span class="toc-text">UnoCSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.</span> <span class="toc-text">📋 计划学习技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.1.</span> <span class="toc-text">LangChain LangGraph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.2.</span> <span class="toc-text">React Next.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.3.</span> <span class="toc-text">React Native</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.4.</span> <span class="toc-text">Flask Django</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.5.</span> <span class="toc-text">Electron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timeline-view"><span class="toc-number">4.6.</span> <span class="toc-text">Flutter</span></a></li></ol></li></ol>
           </div>
         </div>
       </cosy-drag-box>
