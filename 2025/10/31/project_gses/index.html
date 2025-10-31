@@ -201,7 +201,7 @@
           <!-- 文章标题 -->
           <h1 class="post-title">广厦二手 小程序 全栈项目</h1>
           <div class="last-updated">
-            上次更新: 2025-10-31 14:43:55
+            上次更新: 2025-10-31 15:46:29
           </div>
           <!-- 文章 -->
           <h1 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h1><p>广厦二手交易小程序，实现跨校区商品发布与撮合交易等，服务学生群体，促进资源循环利用。<br>项目展示在最下方</p>
@@ -270,22 +270,62 @@
 </ul>
 <h1 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h1><div class="video-container">
   <video controls preload="metadata">
-    <source src="/public/video/gses_t.mp4" type="video/mp4">
+    <source src="/public/video/gses.mp4" type="video/mp4">
     <!-- 这里不要写本地文件路径，而是要写网站渲染后的路径 这样浏览器才可以解析 -->
   </video>
+  <br>
+  <!-- 修复闭合标签：<b> 应有对应的 </b> -->
+  <b>
+    如果你有体验权限可扫码体验，抱歉，由于时间有限，未能对主流机型做好完美适配，兼容会有点问题,请多担待。
+    进入如遇连接超时，请等待1-2分钟，服务器自动从休眠转重启后，可正常体验。
+  </b>
+
+  <br>
+  <!-- 添加响应式图片 -->
+  <img src="/image/gses_体验版.jpg" alt="GSes 体验版二维码" class="responsive-image">
 </div>
 
+<!-- 样式增强：视频 + 图片响应式 -->
 <style>
-.video-container {
-  width: 100%;
-  max-width: 800px;
-  overflow: hidden;
-}
+  .video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
 
-.video-container video {
-  width: 100%;
-  height: auto;
-}
+  /* 视频响应式 */
+  .video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* 图片响应式 */
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* 控制最大宽度 */
+    display: block;
+    margin: 16px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  /* 文字排版优化 */
+  .video-container a,
+  .video-container b {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .video-container a:hover {
+    text-decoration: underline;
+    color: #007acc;
+  }
 </style>
             <div class="post-tags">
               <!-- 文章tags -->
