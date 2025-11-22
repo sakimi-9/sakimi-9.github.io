@@ -37,6 +37,68 @@
     };
   </script>
 
+  <!-- 运行时路径修复：处理 file:// 打开或子路径托管导致的资源 404 -->
+  <script>
+    (function () {
+      function ensureRelative(p) {
+        if (!p) return p;
+        // 如果以 / 开头，转换为相对路径（file:// 或解压场景）
+        if (p.charAt(0) === '/') return '.' + p;
+        return p;
+      }
+
+      // 在本地以 file:// 打开时，或希望兼容解压后的静态文件夹，修正 img/script/link 的路径
+      if (location.protocol === 'file:') {
+        document.addEventListener('DOMContentLoaded', function () {
+          // 修正 img src
+          document.querySelectorAll('img').forEach(function (img) {
+            try {
+              var s = img.getAttribute('src');
+              if (!s) return;
+              // 如果是绝对路径或直接以 analysis_results 开头，转换为相对路径
+              if (s.charAt(0) === '/' || s.indexOf('analysis_results') === 0) {
+                img.src = ensureRelative(s);
+              }
+            } catch (e) { }
+          });
+
+          // 修正 link[href] 和 script[src]
+          document.querySelectorAll('link[rel="stylesheet"]').forEach(function (ln) {
+            try {
+              var h = ln.getAttribute('href');
+              if (!h) return;
+              if (h.charAt(0) === '/') ln.href = ensureRelative(h);
+            } catch (e) { }
+          });
+
+          document.querySelectorAll('script').forEach(function (sc) {
+            try {
+              var src = sc.getAttribute('src');
+              if (!src) return;
+              if (src.charAt(0) === '/') sc.src = ensureRelative(src);
+            } catch (e) { }
+          });
+        });
+      } else {
+        // 运行在 http(s) 下：若页面位于子路径（如 /prject_DPV-EC/），但资源仍以根路径请求（/analysis_results/...），
+        // 可选择在这里自动把以 "/analysis_results" 开头的请求重写为带项目子路径的路径。
+        var subPath = location.pathname.split('/').filter(Boolean)[0];
+        if (subPath && subPath !== 'index.html') {
+          // 延迟修正，避免阻塞加载
+          document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('img').forEach(function (img) {
+              try {
+                var s = img.getAttribute('src');
+                if (!s) return;
+                if (s.charAt(0) === '/') img.src = '/' + subPath + s;
+              } catch (e) { }
+            });
+          });
+        }
+      }
+    })();
+  </script>
+
   <!-- CSS隔离样式，防止被Hexo主题覆盖 -->
   <style>
     /* 重置所有继承的样式 */
